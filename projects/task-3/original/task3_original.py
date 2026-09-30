@@ -49,9 +49,3 @@ cutter = (
 solid = solid.cut(cutter)
 
 show_object(solid)
-
-# ------------------------------------------------------------
-# EXPORT FINAL MODEL
-# ------------------------------------------------------------
-
-cq.exporters.export(solid, "Task2.stl")
