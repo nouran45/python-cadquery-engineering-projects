@@ -2,9 +2,9 @@
 
 A portfolio of parametric CAD models developed using **Python and CadQuery**.
 
-This repository documents my progression from fundamental CadQuery operations to multi-stage engineering modeling, geometric feature creation, repeated patterns, model modification, debugging, and STL generation.
+This repository documents my progression from fundamental CadQuery operations to multi-stage engineering modeling, repeated feature generation, model modification, debugging, and STL export.
 
-Rather than presenting only finished models, the repository preserves intermediate development stages to demonstrate the engineering and problem-solving process behind each result.
+Rather than showing only finished models, the repository preserves intermediate development stages to demonstrate the engineering and problem-solving process behind each result.
 
 ---
 
@@ -17,6 +17,7 @@ Rather than presenting only finished models, the repository preserves intermedia
 - Boolean Operations
 - Workplanes and Selectors
 - 3D Transformations
+- Repeated Feature Generation
 - STL Generation
 - Engineering Model Debugging
 
@@ -89,40 +90,72 @@ These exercises provided the foundation for the larger engineering tasks in the 
 
 ## Task 1 — Parametric Tray with Multiple Openings
 
-Task 1 demonstrates progressive construction of a rounded tray-like component.
+Task 1 demonstrates the progressive development of a rounded tray-like component using parameterized dimensions and Boolean operations.
 
-### Development Stages
+### Stage 1 — Base and Perimeter
 
-#### Stage 1 — Base and Perimeter
+The first stage establishes the basic outer body and perimeter geometry.
 
-Initial outer geometry and perimeter development.
+![Task 1 Stage 1](projects/task-1/renders/stage_01_base_and_rim.png)
 
-#### Stage 2 — Rounded Internal Cavity
+### Stage 2 — Rounded Internal Cavity
 
-Introduced the internal cavity and rounded internal geometry.
+The second stage introduces the internal cavity and rounded internal geometry.
 
-#### Stage 3 — Circular Openings
+![Task 1 Stage 2](projects/task-1/renders/stage_02_rounded_cavity.png)
 
-Refined the model to the required overall dimensions and added:
+### Stage 3 — Circular Openings
 
-- Circular side-wall opening
-- Circular floor opening
+The third stage adds:
 
-#### Stage 4 — Rectangular Openings
+- A circular side-wall opening
+- A circular floor opening
 
-Added the remaining geometric features:
+It also refines the overall model dimensions and feature positions.
 
-- Rounded rectangular floor opening
-- Centered rectangular floor opening
-- Rectangular side-wall opening
+![Task 1 Stage 3](projects/task-1/renders/stage_03_circular_openings.png)
 
-The final model combines the complete outer body, cavity, circular openings, and rectangular openings.
+### Stage 4 — Final Model
+
+The final stage adds:
+
+- A rounded rectangular floor opening
+- A centered rectangular floor opening
+- A rectangular side-wall opening
+
+The final model combines the outer body, rounded cavity, circular openings, and rectangular openings.
+
+![Task 1 Final Model](projects/task-1/renders/final%20Stage%204%20model.png)
 
 ---
 
 ## Task 2 — Repeated Parametric Feature Model
 
-Task 2 demonstrates a more complex staged modeling workflow.
+Task 2 demonstrates a more complex modeling workflow involving repeated geometry and feature placement.
+
+### Main Body
+
+The model begins with the main base and outer body geometry.
+
+![Task 2 Main Body](projects/task-2/renders/01_main_body.png)
+
+### Hollow Feature Development
+
+The next stage introduces the hollow geometry and circular feature development.
+
+![Task 2 Hollow Feature](projects/task-2/renders/02_on_hollow_feature.png)
+
+### Repeated Feature Pattern
+
+The model then generates **24 repeated feature positions** programmatically instead of modeling each feature manually.
+
+![Task 2 Repeated Features](projects/task-2/renders/03_24features.png)
+
+### Final Model
+
+The final stage adds the raised five-point star geometry and completes the repeated feature layout.
+
+![Task 2 Final Model](projects/task-2/renders/04_final.png)
 
 ### Development Stages
 
@@ -133,7 +166,7 @@ Task 2 demonstrates a more complex staged modeling workflow.
 5. Repeated feature generation
 6. Raised five-point star features
 
-The final model contains **24 repeated feature positions**, demonstrating how repeated geometry can be generated programmatically instead of manually modeling each feature.
+This task demonstrates how parametric programming can automate repetitive CAD operations and maintain consistent feature placement.
 
 The project also includes the final exported STL model.
 
@@ -141,16 +174,17 @@ The project also includes the final exported STL model.
 
 ## Task 3 — Existing Model Modification
 
-Task 3 focuses on modifying an existing parametric model rather than building a component entirely from scratch.
+Task 3 focuses on modifying an existing CadQuery model rather than building a component entirely from scratch.
 
-The repository preserves both:
+The repository preserves both the original and modified versions to provide a clear before-and-after comparison.
 
-```text
-original/
-modified/
-```
+### Original Model
 
-This provides a clear before-and-after representation of the engineering changes.
+![Task 3 Original Model](projects/task-3/renders/01_before.png)
+
+### Modified Model
+
+![Task 3 Modified Model](projects/task-3/renders/02_after.png)
 
 The project demonstrates:
 
@@ -162,21 +196,27 @@ The project demonstrates:
 - Refining features using fillets
 - Exporting the modified model to STL
 
+This task demonstrates the ability to read, understand, and extend an existing parametric CAD script.
+
 ---
 
 ## Task 4 — CadQuery Debugging
 
 Task 4 focuses on diagnosing and correcting a non-working CadQuery model.
 
-The task involved debugging modeling logic and producing a functional final script.
+The work involved identifying issues in the modeling logic, correcting the script, and producing a functional final model.
 
-This demonstrates an important engineering programming skill: not only creating CAD geometry, but also understanding and repairing existing parametric CAD code.
+### Corrected Model
+
+![Task 4 After Debugging](projects/task-4/renders/after_debugging.png)
+
+This task demonstrates an important engineering programming skill: not only creating CAD geometry, but also understanding and debugging existing parametric modeling code.
 
 ---
 
 # Engineering Workflow
 
-The projects demonstrate the following workflow:
+The projects collectively demonstrate the following workflow:
 
 ```text
 Reference Geometry
@@ -191,6 +231,8 @@ Boolean Operations
         ↓
 Workplane / Coordinate Management
         ↓
+Pattern Generation
+        ↓
 Debugging and Refinement
         ↓
 Final Geometry
@@ -202,7 +244,7 @@ STL Export
 
 # Running the Models
 
-Install the required Python dependency:
+Install the required dependency:
 
 ```bash
 pip install -r requirements.txt
@@ -232,27 +274,33 @@ This repository documents practical experience with:
 - Iterative model development
 - Geometric problem solving
 - Engineering scripting
+- Feature pattern generation
 - Debugging
 - 3D model generation
+- STL export
 
-The staged project structure intentionally preserves the development process rather than showing only the finished results.
+The staged project structure intentionally preserves the development process instead of showing only the final outputs.
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 Planned improvements include:
 
-- Adding rendered screenshots for each project stage
-- Adding final-model previews to the project documentation
-- Improving parameter organization and reusable functions
-- Adding additional STL exports
-- Expanding the collection with more complex parametric CAD projects
+- Adding additional model views
+- Adding more STL exports
+- Improving parameter organization
+- Creating reusable modeling functions
+- Expanding the repository with more advanced CadQuery projects
 
 ---
 
 ## Author
 
-**Farida Elselmy**
+**Nouran Salama**
 
-Computer Engineering student with interests in software development, engineering automation, parametric modeling, and computational design.
+Computer Engineering student at the Egypt-Japan University of Science and Technology (E-JUST) with hands-on experience in Machine Learning, Deep Learning, Generative AI, Retrieval-Augmented Generation (RAG), Embedded Systems, Robotics, and Software Development.
+
+Experienced in building end-to-end AI applications involving NLP, Transformers, LLMs, semantic retrieval, vector databases, REST APIs, and interactive interfaces.
+
+Co-author of an IEEE-published research paper on Vision Transformer-based skin disease detection.
